@@ -100,4 +100,9 @@ Address=169.254.100.3/16
 EOF
 
 
+yay -S cpupower
+# Set powersave gov
+sudo vim /etc/default/cpupower
+sudo systemctl enable --now cpupower.service
+
 
