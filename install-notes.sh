@@ -105,4 +105,7 @@ yay -S cpupower
 sudo vim /etc/default/cpupower
 sudo systemctl enable --now cpupower.service
 
+# create /power-control.py from other repo
+yay -S fping
+
 
