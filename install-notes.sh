@@ -109,3 +109,9 @@ sudo systemctl enable --now cpupower.service
 yay -S fping
 
 
+# Install VPN stuff
+yay -S tailscale
+sudo systemctl enable --now tailscaled.service
+sudo tailscale up
+
+
