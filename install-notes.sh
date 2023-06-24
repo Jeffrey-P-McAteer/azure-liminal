@@ -118,5 +118,8 @@ sudo tailscale up
 # Create a 'guest' account (pw: guest)
 useradd -m -G video -s /usr/bin/bash guest
 
+# NOTE: for password logins, ensure "ChallengeResponseAuthentication no"
+#       is specified in /etc/ssh/sshd_config. Arch's default PAM setup is... detailed.
+
 
 
