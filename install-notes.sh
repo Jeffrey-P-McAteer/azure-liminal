@@ -115,3 +115,8 @@ sudo systemctl enable --now tailscaled.service
 sudo tailscale up
 
 
+# Create a 'guest' account (pw: guest)
+useradd -m -G video -s /usr/bin/bash guest
+
+
+
