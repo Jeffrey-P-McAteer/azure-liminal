@@ -123,4 +123,21 @@ useradd -m -G video -s /usr/bin/bash guest
 #       Also add /usr/bin/bash to /etc/shells
 
 
+cat > /etc/systemd/system/long-running-proc.service <<EOF
+[Unit]
+Description=Runs a script detatched from any terminals
+
+[Service]
+Type=simple
+User=root
+ExecStart=/long-running-proc.sh
+Restart=no
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+touch /long-running-proc.sh
+chmod +x /long-running-proc.sh
+
 
