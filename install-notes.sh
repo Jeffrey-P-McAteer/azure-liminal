@@ -131,7 +131,8 @@ Description=Runs a script detatched from any terminals
 Type=simple
 User=root
 ExecStart=/long-running-proc.sh
-Restart=no
+Restart=always
+RestartSec=12
 
 [Install]
 WantedBy=multi-user.target
@@ -139,5 +140,9 @@ EOF
 
 touch /long-running-proc.sh
 chmod +x /long-running-proc.sh
+
+# used for downloading large models + bandwidth limiting git.
+yay -S git-lfs trickle
+
 
 
