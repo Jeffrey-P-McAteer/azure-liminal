@@ -16,4 +16,9 @@ HOST=169.254.100.3
 
 echo "HOST=$HOST"
 
-exec ssh -i /j/ident/azure_liminal_jeffrey jeffrey@$HOST
+if ! command -v waypipe 2>&1 >/dev/null ; then
+  echo "waypipe not found, running SSH directly"
+  exec ssh -i /j/ident/azure_liminal_jeffrey jeffrey@$HOST
+else
+  exec waypipe ssh -i /j/ident/azure_liminal_jeffrey jeffrey@$HOST
+fi
